@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code</title>
+</head>
+<body>
+    <img id="qr" src="" alt="QR Code">
+    <script>
+        fetch('/qrcode') // Rota para obter o QR Code
+            .then(response => response.text())
+            .then(qrCode => {
+                document.getElementById('qr').src = qrCode; // Exibe o QR Code na página
+            })
+            .catch(err => console.error(err));
+    </script>
+</body>
+</html>
